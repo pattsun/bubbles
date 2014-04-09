@@ -1,0 +1,105 @@
+body{
+  background:#2eab89;
+  background-attachment:fixed;
+}
+
+.wrap{
+  background:rgba(255,255,255,1);
+  border-left:white 1px solid;
+  border-right:white 1px solid;
+  padding-top: 40px;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot");
+  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'),
+       url("../font/fontello.woff") format('woff'),
+       url("../font/fontello.ttf") format('truetype'),
+       url("../font/fontello.svg#fontello") format('svg');
+  font-weight: normal; 
+  font-style: normal;
+}
+
+*[class*="icon"]:before{
+	font-family: 'fontello';
+	margin-right:5px;
+}
+
+h3+h4:before{
+  content:"";
+  margin-right: 0;
+}
+
+.icon-dl:before{content:"f";}
+.icon-grids:before{content:"i";}
+.icon-ui:before{content:"h";}
+.icon-author:before{content:"e";}
+.icon-github:before{content:"j";}
+
+.dlbutton{
+  width:300px;
+  height:50px;
+  font-size:30px;
+  border-radius:25px;
+  margin:15px auto;
+}
+
+.ja *:lang(en){display: none;}
+.en *:lang(ja){display: none;}
+
+.language-control{
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.control-group label:first-child{
+  width:70px;
+}
+
+.gridsample{
+  padding:10px;
+}
+
+.inner{
+  text-align: center;
+  color:white;
+  font-weight:bold;
+  background:#2eab89;
+  border-radius:5px;
+  padding:3px;
+}
+
+nav{
+  position: fixed;
+  background: white;
+  z-index: 100;
+  top:0;
+  left:0;
+}
+
+nav li a{
+  color:white;
+}
+
+.box{
+  height: 120px;
+  width:120px;
+  padding:5px;
+  border:#ddd 1px solid;
+}
+
+section>h2{
+  padding-top: 40px;
+  margin-top:-40px;
+  color:#54929b;
+}
+
+p{
+  margin:5px;
+}
+
+h1:first-child{
+  font-family: 'Plaster', sans-serif;
+}

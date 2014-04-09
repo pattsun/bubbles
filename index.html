@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Bubbles Framework</title>
+	<meta name="keyword" content="CSS HTML5 framework responsive grid">
+	<meta name="description" content="Bubbles Framework is light weight responsive CSS framework.">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="bubbles/bubbles.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700|Plaster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.smoothScroll.js"></script>
+	<script type="text/javascript">
+		function browserLanguage() {
+			try {
+				return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2);
+			}
+			catch(e) {return undefined;}
+		}
+
+		$(function(){
+			if(browserLanguage()=="ja"){
+				$("body").attr("class","ja");
+			}else if(browserLanguage()=="en"){
+				$("body").attr("class","en");
+			}
+			$('a[href^="#"]').smoothScroll();
+
+			$("#btn-ja").click(function(){
+				$("body").attr("class","ja");
+			});
+			$("#btn-en").click(function(){
+				$("body").attr("class","en");
+			});
+		});
+	</script>
+	<!--[if lt IE 9]>
+	 <script src="<a href="http://html5shiv.googlecode.com/svn/trunk/html5.js" target="_blank" rel="noreferrer" style="cursor:help;display:inline !important;">http://html5shiv.googlecode.com/svn/trunk/html5.js</a>"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="wrap shadow">
+		<header>
+			<nav class="blue">
+				<ul>
+					<li><a class="icon-dl" href="#download">Download</a></li>
+					<li><a class="icon-grids" href="#gridssystem">Grids</a></li>
+					<li><a class="icon-ui" href="#helper">Helper</a></li>
+					<li><a class="icon-ui" href="#ui">UI</a></li>
+					<li><a class="icon-author" href="#author">Author</a></li>
+				</ul>
+			</nav>
+
+			<div class="container">
+				<h1>Bubbles Framework</h1>
+				<p lang="en">Bubbles Framework is light weight responsive CSS framework.</p>
+				<p lang="ja">Bubbles Frameworkは軽量なresponsiveレイアウトのCSS frameworkです。</p>
+			</div>
+
+		</header>
+
+		<div class="container">
+			<div class="language-control">
+				<span class="button" id="btn-ja">日本語</span>
+				<span class="button" id="btn-en">English</span>
+			</div>
+
+			<article>
+				<section id="download">
+					<h2 class="icon-dl">Download</h2>
+					<a class="icon-github button centered dlbutton blue" href="https://github.com/pattsun/bubbles">GitHub</a>
+				</section>
+
+				<section id="gridssystem">
+					<h2 class="icon-grids">Grids system</h2>
+					<h3>Grids</h3>
+					<p lang="en">12 grid layouts.</p>
+					<p lang="ja">12列のグリッドでレイアウトをデザインできます。</p>
+					<h4>sample</h4>
+					<div class="row">
+						<div class="grid1 gridsample">
+							<div class="inner">1</div>
+						</div>
+						<div class="grid11 gridsample">
+							<div class="inner">11</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="grid2 gridsample">
+							<div class="inner">2</div>
+						</div>
+						<div class="grid10 gridsample">
+							<div class="inner">10</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="grid3 gridsample">
+							<div class="inner">3</div>
+						</div>
+						<div class="grid9 gridsample">
+							<div class="inner">9</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="grid4 gridsample">
+							<div class="inner">4</div>
+						</div>
+						<div class="grid8 gridsample">
+							<div class="inner">8</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="grid5 gridsample">
+							<div class="inner">5</div>
+						</div>
+						<div class="grid7 gridsample">
+							<div class="inner">7</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="grid6 gridsample">
+							<div class="inner">6</div>
+						</div>
+						<div class="grid3 gridsample">
+							<div class="inner">3</div>
+						</div>
+						<div class="grid3 gridsample">
+							<div class="inner">3</div>
+						</div>
+					</div>
+					<h4>markup</h4>
+					<pre><code>
+&lt;div class="row"&gt;
+	&lt;div class="grid6"&gt;6&lt;/div&gt;
+	&lt;div class="grid3"&gt;3&lt;/div&gt;
+	&lt;div class="grid3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+					</code></pre>
+
+					<h3>Dynamic row</h3>
+					<p lang="en">dynamic row is fluid dynamically on phone width.</p>
+					<p lang="ja">dynamicクラスをつけると、スマートフォン幅での表示時にグリッドが下に回り込みます。</p>
+					<h4>sample</h4>
+					<div class="row dynamic">
+						<div class="grid4 gridsample">
+							<div class="inner">4</div>
+						</div>
+						<div class="grid4 gridsample">
+							<div class="inner">4</div>
+						</div>
+						<div class="grid4 gridsample">
+							<div class="inner">4</div>
+						</div>
+					</div>
+					<h4>markup</h4>
+					<pre><code>
+&lt;div class="row dynamic"&gt;
+...
+					</code></pre>
+
+					<h3>Nested row</h3>
+					<p lang="en">inner row also has 12 grids. dynamic row and static row can be mixed them.</p>
+					<p lang="ja">rowを入れ子にすることができます。内側のrowはさらに12列のグリッドを持ちます。dynamic rowも混ぜて使用することができます。</p>
+					<h4>sample</h4>
+					<div class="row dynamic">
+						<div class="grid4 gridsample">
+							<div class="inner">4</div>
+						</div>
+						<div class="grid8 gridsample">
+							<div class="inner">
+								8
+								<div class="row">
+									<div class="grid6 gridsample">
+										<div class="inner yellow">nested grid6</div>
+									</div>
+									<div class="grid3 gridsample">
+										<div class="inner yellow">nested grid3</div>
+									</div>
+									<div class="grid3 gridsample">
+										<div class="inner yellow">nested grid3</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h4>markup</h4>
+					<pre><code>
+&lt;div class="row dynamic"&gt;
+	&lt;div class="grid4"&gt;4&lt;/div&gt;
+	&lt;div class="grid8"&gt;
+		8
+		&lt;div class="row"&gt;
+			&lt;div class="grid6"&gt;nested grid6&lt;/div&gt;
+			&lt;div class="grid3"&gt;nested grid3&lt;/div&gt;
+			&lt;div class="grid3"&gt;nested grid3&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+					</code></pre>
+
+					<h3>Rtl row</h3>
+					<p lang="en">Usually,the grids are put from left to right. but, the grids whitch had attached rtl class are put from right to left.</p>
+					<p lang="ja">通常gridは左から並べられますが、rtlクラスをつけられたrowの中にあるgridは、右から並ぶようになります。</p>
+					<h4>sample</h4>
+					<div class="row dynamic rtl">
+						<div class="grid6 gridsample">
+							<div class="inner">upper written</div>
+						</div>
+						<div class="grid6 gridsample">
+							<div class="inner">lower written</div>
+						</div>
+					</div>
+					<h4>markup</h4>
+					<pre><code>
+&lt;div class="row dynamic rtl"&gt;
+...
+					</code></pre>
+				</section>
+
+
+				<section id="helper">
+					<h2 class="icon-ui">Helper</h2>
+					<h3>Layout helper</h3>
+					<div class="row dynamic">
+						<div class="grid3">
+							<img class="shadow centered" src="http://placekitten.com/100/100">
+							<p class="centered">.shadow</p>
+						</div>
+						<div class="grid3">
+							<img class="round centered" src="http://placekitten.com/100/100">
+							<p class="centered">.round</p>
+						</div>
+						<div class="grid3">
+							<img class="circle centered" src="http://placekitten.com/100/100">
+							<p class="centered">.circle</p>
+						</div>
+						<div class="grid3">
+							<img class="fit centered" src="http://placekitten.com/100/100">
+							<p class="centered">.fit</p>
+						</div>
+					</div>
+					<div class="row dynamic">
+						<div class="grid4">
+							<img class="align-left" src="http://placekitten.com/100/100">
+							<p class="centered">.align-left</p>
+						</div>
+						<div class="grid4">
+							<img class="centered" src="http://placekitten.com/100/100">
+							<p class="centered">.centered</p>
+						</div>
+						<div class="grid4">
+							<img class="align-right" src="http://placekitten.com/100/100">
+							<p class="centered">.align-right</p>
+						</div>
+					</div>
+					<h3>Color helper</h3>
+					<div class="row dynamic">
+						<div class="grid2">
+							<a href="#" class="button red">.red</a>
+						</div>
+						<div class="grid2">
+							<a href="#" class="button green">.green</a>							
+						</div>
+						<div class="grid2">
+							<a href="#" class="button blue">.blue</a>
+						</div>
+						<div class="grid2">
+							<a href="#" class="button yellow">.yellow</a>
+						</div>
+						<div class="grid2">
+							<a href="#" class="button white">.white</a>
+						</div>
+						<div class="grid2">							
+						</div>
+					</div>
+					<div class="row dynamic">
+						<div class="grid2">
+							<span class="red-letter">.red-letter</span>
+						</div>
+						<div class="grid2">
+							<span class="green-letter">.green-letter</span>							
+						</div>
+						<div class="grid2">
+							<span class="blue-letter">.blue-letter</span>
+						</div>
+						<div class="grid2">
+							<span class="yellow-letter">.yellow-letter</span>
+						</div>
+						<div class="grid2">
+							<span class="white-letter">.white-letter</span>
+						</div>
+						<div class="grid2">							
+						</div>
+					</div>
+					<h3>Phone visible</h3>
+					<div class="row">
+						<div class="grid6 centered">
+							<div class="box centered">
+								<img class="hidden-phone shadow centered" src="http://placekitten.com/100/100">
+							</div>
+							.hidden-phone
+						</div>
+						<div class="grid6 centered">
+							<div class="box centered">
+								<img class="visible-phone shadow centered" src="http://placekitten.com/100/100">
+							</div>
+							.visible-phone
+						</div>
+					</div>
+				</section>
+
+				<section id="ui">
+					<h2 class="icon-ui">UI controls</h2>
+					<div class="row dynamic">
+						<div class="grid6">
+							<h3>Headings</h3>
+							<h1>h1 heading</h1>
+							<h2>h2 heading</h2>
+							<h3>h3 heading</h3>
+							<h4>h4 heading</h4>
+							<h5>h5 heading</h5>
+							<h6>h6 heading</h6>
+						</div>
+						<div class="grid6">
+							<h3>Table</h3>
+							<table class="table">
+								<tr>
+									<th>th</th><td>td</td><td>td</td>
+								</tr>
+								<tr>
+									<th>th</th><td>td</td><td>td</td>
+								</tr>
+								<tr>
+									<th>th</th><td>td</td><td>td</td>
+								</tr>
+							</table>
+
+							<h3>Button</h3>
+							<span class="button">button</span>
+							<span class="button">button</span>
+							<span class="button">button</span>
+
+							<h3>link</h3>
+							<p>this is a <a href="#">link text</a>.</p>
+						</div>
+					</div>					
+
+					<h3>List</h3>
+					<div class="row dynamic">
+						<div class="grid4">
+							<h4>ul</h4>
+							<ul>
+								<li>li</li>
+								<li>
+									li
+									<ul>
+										<li>nest</li>
+										<li>nest</li>
+										<li>nest</li>
+									</ul>
+								</li>
+								<li>li</li>
+							</ul>
+						</div>
+						<div class="grid4">
+							<h4>ol</h4>
+							<ol>
+								<li>li</li>
+								<li>li</li>
+								<li>li</li>
+								<li>li</li>
+							</ol>
+						</div>
+						<div class="grid4">
+							<h4>dl</h4>
+							<dl>
+								<dt>dt</dt><dd>dd</dd>
+								<dt>dt</dt><dd>dd</dd>
+								<dt>dt</dt><dd>dd</dd>
+							</dl>
+						</div>
+					</div>
+
+					<h3>Form controls</h3>
+					<form>
+						<fieldset class="horizontal">
+							<legend>horizontal form</legend>
+							<div class="control-group">
+								<label>search</label><input type="search" value="search">
+							</div>
+							<div class="control-group">
+								<label>input</label><input type="text" value="input">
+							</div>
+							<div class="control-group">
+								<label>checkbox</label>
+								<input type="checkbox" value="checkbox">value1
+								<input type="checkbox" value="checkbox">value2
+							</div>
+							<div class="control-group">
+								<label for="radio">radio</label>
+								<input name="radio" type="radio" value="radio">radio
+								<input name="radio" type="radio" value="radio">radio
+							</div>
+							<div class="control-group">
+								<label>textarea</label><textarea>textarea</textarea>
+							</div>
+							<div class="control-group">
+								<label>submit</label><input type="submit">
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>inline form</legend>
+							<div class="control-group">
+								<label>user</label><input type="text" value="exsample">
+							</div>
+							<div class="control-group">
+								<label>password</label><input type="password" value="password">
+							</div>
+						</fieldset>
+					</form>					
+
+				</section>
+			</article>
+		</div>
+
+		<footer>
+			<div class="container">
+				<section id="author">
+					<h2 class="icon-author">Author</h2>
+					<div class="row">
+							<img class="round" src="https://ja.gravatar.com/avatar/95557b9e9f8f83396357ad7bd26dca46?s=80&amp;r=g">
+							<p>Alin<a class="button" href="http://twitter.com/pattsuncute">@pattsuncute</a></p>
+						</div>
+					</div>					
+				</section>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
