@@ -38,6 +38,13 @@ body{
 	padding:0 20px;
 	overflow: hidden;
 	position: relative;
+	clear: both;
+}
+
+.container:after{
+	content: "";
+	clear: both;
+	display: block;
 }
 
 @media screen and (max-width: 600px) {
@@ -88,7 +95,11 @@ h6{
 .row{
 	width:100%;
 	clear: both;
-	overflow: hidden;
+}
+.row:after{
+	content: "";
+	clear: both;
+	display: block;
 }
 
 *[class^="grid"]{
