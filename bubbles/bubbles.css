@@ -80,12 +80,70 @@ h6{
 .row{
 	width:100%;
 	display:flex;
-	justify-content:center;
 	flex-wrap:wrap;
+}
+
+.column{
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:column;
 }
 
 .rtl{
 	flex-direction:row-reverse;
+}
+
+.align1{
+	justify-content:flex-start;
+	align-items:flex-end;
+}
+
+.align2{
+	justify-content:center;
+	align-items:flex-end;
+}
+
+.align3{
+	justify-content:flex-end;
+	align-items:flex-end;
+}
+
+.align4{
+	justify-content:flex-start;
+	align-items:center;
+}
+
+.align5{
+	justify-content:center;
+	align-items:center;
+}
+
+.align6{
+	justify-content:flex-end;
+	align-items:center;
+}
+
+.align7{
+	justify-content:flex-start;
+	align-items:flex-start;
+}
+
+.align8{
+	justify-content:center;
+	align-items:flex-start;
+}
+
+.align9{
+	justify-content:flex-end;
+	align-items:flex-start;
+}
+
+.baseline{
+	align-items:baseline;	
+}
+
+.stretch{
+	align-items:stretch;	
 }
 
 .grid1{
