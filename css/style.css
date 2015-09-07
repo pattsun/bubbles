@@ -54,8 +54,8 @@ h3+h4:before{
 
 .language-control{
   position:absolute;
-  top:0;
-  right:0;
+  top:50px;
+  right:10px;
 }
 
 .control-group label:first-child{
